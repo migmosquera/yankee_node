@@ -1,5 +1,5 @@
 var aplicacion = angular.module('yankee-app', []);
-aplicacion.controller('Login', function ($scope, $http) {
+aplicacion.controller('Login', function ($scope, $http, $location,$window) {
     $scope.user = new Object();
     $scope.login = function () {
         $http({
@@ -11,11 +11,15 @@ aplicacion.controller('Login', function ($scope, $http) {
             }
         })
         .success(function (data) {
-            console.log(data)
-            console.log("llego aqui")
+          console.log(data);
+          if(data == 'error'){
+            console.log('usuario o contrasena incorrecta')
+          }else{
+            $window.location.href = '/home';
+          }
         }).
         error(function() {
-            alert('Error al intentar recuperar los clientes.');
+          alert('Error al intentar recuperar los clientes.');
         });
     };
 });
