@@ -1,0 +1,23 @@
+doctype html
+html(ng-app='yankee-app')
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/materialize.min.css')
+  body
+    h1= title
+    p Welcome to #{title}
+    div(ng-controller="Login") 
+      form(name="add-estimation", method="post")
+        div.input
+            span.label Title
+            input(type="text", name="username", ng-model="user.username", placeholder="Usuario")
+        div.input
+            span.label Description
+            input(type="password", name="user.password", ng-model="user.password" ,  placeholder="Contraseña", )
+        div.actions
+            input(type="submit", value="Ingresar", ng-click="login()")
+    script(type="text/javascript" src="/javascripts/angular.min.js")
+    script(type="text/javascript" src="/javascripts/index.js")               
+
+           
