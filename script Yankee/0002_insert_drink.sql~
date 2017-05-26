@@ -1,0 +1,9 @@
+use yankee_node:
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Cerveza');
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Agua');
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Refresco');
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Trago de Ron');
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Trago de Whisky');
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Soda');
+INSERT INTO `yankee_node`.`type_drinks` (`name`) VALUES ('Jugo');
+

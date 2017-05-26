@@ -1,0 +1,22 @@
+instalar express
+express <direccion del proyecto>
+
+instalar el servidor 
+sudo npm install
+
+instalar el orm
+sudo npm install --save sequelize
+
+instalar coneccion a la bd
+sudo npm install --save mysql2
+sudo npm install mysql
+
+instalar el convertidor md5 
+sudo npm install md5
+
+manejo de sessiones 
+sudo npm install express-session
+sudo npm install cookie-session
+
+
+
