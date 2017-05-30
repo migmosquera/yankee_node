@@ -11,24 +11,29 @@ html(ng-app='yankee-app')
           div.row
             div.col.s6.offset-s3
               div.card
-                div.card-content(style="text-align: center")
-                  
-                    div.left-align
-                      div(ng-controller="Login") 
-                        form(name="add-estimation", method="post")
-                          p.messages.autoUpdate="true".showDetail="true"
-                            div.row
-                              div.col.s12.input-field
-                                input(type="text", name="username", ng-model="user.username", placeholder="Usuario", required="true", requiredMessage="Ingrese un usuario!")
-                              div.col.s12.input-field
-                                input(type="password", name="user.password", ng-model="user.password" ,  placeholder="Contraseña", required="true", requiredMessage="Ingrese una contraseña!")
-                              div.col.s12.input-field
-                                input.btn.btn-large(type="submit", value="Ingresar", ng-click="login()")
+                div.card-content
+                  img.responsive-img(src="images/centroHipicoYankee.jpeg")(style='width: 175px')
+                  div.left-align
+                    div(ng-controller="Login")
+                      form(name="add-estimation", method="post")
+                        
+                        div.row
+                          div.col.s12.input-field
+                            input(type="text", name="username", ng-model="user.username", placeholder="Usuario", required="true")
+                            p.errorLabel#errorLabel.
+                              Ingrese un usuario
+                          div.col.s12.input-field
+                            input(type="password", name="user.password", ng-model="user.password" ,  placeholder="Contraseña", required="true")
+                            p.errorLabel#errorLabel.
+                              Ingrese Contraseña
+                          div.col.s12.input-field(style="text-align: center")
+                            input.btn.btn-large(type="submit", value="Ingresar", ng-click="login()")
     
     script(type="text/javascript" src="/javascripts/jquery-1.11.0.min.js")   
     script.
       $(document).on("ready",function(){
             $('#login-page').css({'height': window.innerHeight + 'px'});
-        });        
+        });    
+    script(type="text/javascript" src="/javascripts/materialize.min.js")    
     script(type="text/javascript" src="/javascripts/angular.min.js")
     script(type="text/javascript" src="/javascripts/index.js")  
