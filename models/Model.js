@@ -19,7 +19,8 @@ var models = [
   'Food',
   'Product',
   'Stock',
-  'Billing'
+  'Billing',
+  'TypeClient',
 ];
 
 models.forEach(function(model){
@@ -29,8 +30,8 @@ models.forEach(function(model){
 (function(m){
   m.TypeUser.hasMany(m.User, { as: 'users'});
   m.User.belongsTo(m.TypeUser);
-  m.TypeUser.hasMany(m.Client, { as: 'clients'});
-  m.Client.belongsTo(m.TypeUser);
+  m.TypeClient.hasMany(m.Client, { as: 'clients'});
+  m.Client.belongsTo(m.TypeClient);
   m.Stock.hasMany(m.Food, { as: 'foods'});
   m.Food.belongsTo(m.Stock);
   m.Stock.hasMany(m.Drink, { as: 'drinks'});

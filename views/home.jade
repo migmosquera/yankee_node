@@ -3,17 +3,34 @@ html(ng-app='yankee-app')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/dashboard.css')
     link(rel='stylesheet', href='/stylesheets/materialize.min.css')
   body
+    header.header
+      nav
+        ul
+          li.li
+            a.a(href="client" data-title="Projects") Cliente
+          li.li
+            a.a(href="" data-title="Projects") Projects
+          li.li
+            a.a(href="" data-title="Projects") Projects
+          li.li
+            a.a(href="" data-title="Projects") Projects
+          li.li
+            a.a(href="" data-title="Projects") Projects
+          li.li
+            a.a(href="" data-title="Projects") Projects
+
     h1= title
     p Welcome to #{title}
-    div(ng-controller="Login") 
+    div(ng-controller="home") 
       form(name="add-estimation", method="post")
         div.input
-            p= name
+            p= username
         div.input
             span.label Description
     script(type="text/javascript" src="/javascripts/angular.min.js")
-    script(type="text/javascript" src="/javascripts/index.js")               
+    script(type="text/javascript" src="/javascripts/home.js")               
 
            

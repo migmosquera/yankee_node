@@ -8,13 +8,14 @@ router.get('/', function (req, res, next) {
     var data = req.session.user
     JSON.stringify(data)
     console.log(data[0].username);
-    res.render('home', { username: data[0].username });
+    res.render('client', { username: data[0].username });
 
   } else {
-    console.log("llego aqui")
     res.render('index', { title: 'Yankee' });
   }
 
 });
-
+router.get('/getTypeClient', function (req, res, next) {
+  console.log("paso por aqui")
+});
 module.exports = router;

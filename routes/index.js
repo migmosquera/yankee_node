@@ -16,7 +16,6 @@ function authenticate(name, pass, fn) {
         });
 }
 router.get('/', function (req, res, next) {
-    console.log("get");
     res.render('index', { title: 'Yankee' });
 });
 
@@ -24,7 +23,6 @@ router.post('/login', function (req, res) {
     authenticate(req.query.username, md5(req.query.password), function (err, user) {
         if (user) {
             req.session.user = user;
-            console.log(req.session.user)
             res.send(user)
         } else {
             req.session = null
