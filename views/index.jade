@@ -4,20 +4,31 @@ html(ng-app='yankee-app')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/materialize.min.css')
-  body
-    h1= title
-    p Welcome to #{title}
-    div(ng-controller="Login") 
-      form(name="add-estimation", method="post")
-        div.input
-            span.label Title
-            input(type="text", name="username", ng-model="user.username", placeholder="Usuario")
-        div.input
-            span.label Description
-            input(type="password", name="user.password", ng-model="user.password" ,  placeholder="Contraseña", )
-        div.actions
-            input(type="submit", value="Ingresar", ng-click="login()")
+  body.cyan.lighten-5
+    div.valign-wrapper#login-page
+      div.container
+        div.center-align
+          div.row
+            div.col.s6.offset-s3
+              div.card
+                div.card-content(style="text-align: center")
+                  
+                    div.left-align
+                      div(ng-controller="Login") 
+                        form(name="add-estimation", method="post")
+                          p.messages.autoUpdate="true".showDetail="true"
+                            div.row
+                              div.col.s12.input-field
+                                input(type="text", name="username", ng-model="user.username", placeholder="Usuario", required="true", requiredMessage="Ingrese un usuario!")
+                              div.col.s12.input-field
+                                input(type="password", name="user.password", ng-model="user.password" ,  placeholder="Contraseña", required="true", requiredMessage="Ingrese una contraseña!")
+                              div.col.s12.input-field
+                                input.btn.btn-large(type="submit", value="Ingresar", ng-click="login()")
+    
+    script(type="text/javascript" src="/javascripts/jquery-1.11.0.min.js")   
+    script.
+      $(document).on("ready",function(){
+            $('#login-page').css({'height': window.innerHeight + 'px'});
+        });        
     script(type="text/javascript" src="/javascripts/angular.min.js")
-    script(type="text/javascript" src="/javascripts/index.js")               
-
-           
+    script(type="text/javascript" src="/javascripts/index.js")  
