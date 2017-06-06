@@ -1,0 +1,73 @@
+body {
+  margin:0;
+  padding:0;
+}
+h4 {
+	font-size: 21px;
+	margin: 0 auto;
+	line-height: 63px;
+}
+h5 {
+	color: #fff;
+}
+/*style menu vertical*/
+.side-nav {
+	background-color: #333;
+}
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
+	padding: 0 32px;
+	color: #fff;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 32px;
+}
+.side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a {
+	padding: 0 23.5px 0 60px;
+	height: 90px;
+    line-height: 90px;
+}
+.side-nav .collapsible-body, .side-nav.fixed .collapsible-body {
+	background-color: #333;
+}
+.side-nav li>a {
+	color: #fff;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 32px;
+}
+.menuVertical {
+	display: inline-flex;
+    background-color: #333;
+    width: 64px;
+}
+.menuVertical a {
+	color: #fff;
+    margin: 0 auto;
+}
+#slide-out span {
+	cursor: pointer;
+}
+.side-nav .userView .name {
+    margin-top: 5px;
+    font-size: 22px;
+}
+/*style menu horizontal*/
+nav {
+	background-color: #333;
+}
+/*style add cliente*/
+.input-field .prefix {
+	color: #fff;
+}
+.input-field {
+     color: #fff;
+}
+.select-wrapper span.caret {
+	color: #fff
+}
