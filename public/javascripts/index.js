@@ -1,10 +1,12 @@
+$(document).on("ready", init);
+
 var aplicacion = angular.module('yankee-app', []);
-aplicacion.controller('Login', function ($scope, $http, $location,$window) {
+    aplicacion.controller('Login', function ($scope, $http, $location,$window) {
     $scope.user = new Object();
     $scope.login = function () {
-      /*if ($scope.user.username != ""){
+      if ($scope.user.username != ""){
         console.log("paso por aqui");
-      }*/
+      }
         $http({
          method: 'post', 
          url: '/login', 
@@ -14,7 +16,6 @@ aplicacion.controller('Login', function ($scope, $http, $location,$window) {
             }
         })
         .success(function (data) {
-          console.log(data);
           if(data == 'error'){
             console.log('usuario o contrasena incorrecta')
           }else{
@@ -26,8 +27,6 @@ aplicacion.controller('Login', function ($scope, $http, $location,$window) {
         });
     };
 });
-
-/*$(document).on("ready", init);
 
 var view;
 var controller;
@@ -43,6 +42,7 @@ function init() {
 
 function View() {
     console.log("((View))");
+
     //..
 }
 
@@ -56,4 +56,4 @@ function Model() {
     console.log("((Model))");
 
     //..
-}*/
+}

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Model = require('../models/Model');
-var TypeClient= Model.TypeClient;
+var TypeClient = Model.TypeClient;
 var Client = Model.Client;
 
 /* GET users listing. */
@@ -25,16 +25,15 @@ router.get('/listar', function (req, res) {
 router.post('/saveClient', function (req, res) {
   const client = Client.build({
     firstName: req.query.firstName,
-    lastName: req.query.lastName,
-    dni: req.query.dni,
     phone: req.query.phone,
+    address: req.query.address,
     limit: req.query.limit,
     typeClientId: req.query.typeClient,
   })
   client.save()
     .then(() => {
       res.send(client);
-  });
+    });
   //console.log(req.query.firtName)
 });
 

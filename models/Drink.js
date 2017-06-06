@@ -6,5 +6,8 @@ module.exports = function(sequelize, DataTypes){
   cant_drink: {
     type: DataTypes.INTEGER
   },
+  price: {
+    type: DataTypes.STRING
+  },
 })
 } 

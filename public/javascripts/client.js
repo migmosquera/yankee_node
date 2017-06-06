@@ -19,9 +19,8 @@ aplicacion.controller('Client', function ($scope, $http, $location, $window) {
             url: '/client/saveClient',
             params: {
                 firstName: $scope.client.firtName,
-                lastName: $scope.client.lastName,
-                dni: $scope.client.dni,
                 phone: $scope.client.phone,
+                address: $scope.client.address,
                 limit: $scope.client.limit,
                 typeClient: $scope.typeClient.typeClient.id,
             }

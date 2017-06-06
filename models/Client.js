@@ -3,14 +3,11 @@ module.exports = function(sequelize, DataTypes){
   firstName: {
     type: DataTypes.STRING
   },
-  lastName: {
-    type: DataTypes.STRING
-  },
-  dni: {
-    type: DataTypes.STRING
-  },
   phone: {
     type: DataTypes.STRING
+  },
+  address: {
+    type: DataTypes.TEXT
   },
   limit: {
     type: DataTypes.INTEGER
