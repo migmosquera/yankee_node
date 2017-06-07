@@ -75,3 +75,17 @@ nav {
     text-align: center;
     color: #2EA554;
 }
+.select2-container{
+    width: 100% !important;
+}
+.select2-container .select2-choice{
+    background: none !important;
+    color: #ffffff !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0px !important;
+}
+.select2-arrow{
+    display: none !important;
+}

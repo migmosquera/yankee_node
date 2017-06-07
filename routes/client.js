@@ -16,27 +16,43 @@ router.get('/', function (req, res, next) {
   }
 
 });
-router.get('/listar', function (req, res) {
-  console.log("llego aqui");
-  TypeClient.findAll({})
-    .then(typeClient => {
-      res.send(typeClient);
-    });
+router.get('/searchClientByName', function (req, res) {
+  Client.findAll({})
+    .then(client => {
+      res.send(client);
+    })
 });
 router.post('/saveClient', function (req, res) {
-  const client = Client.build({
-    firstName: req.query.firstName,
-    phone: req.query.phone,
-    address: req.query.address,
-    limit_drink: req.query.limit_drink,
-    limit_food: req.query.limit_food,
-    client_vip: req.query.client_vip,
-  })
-  client.save()
-    .then(() => {
-      res.send(client);
-    });
-  //console.log(req.query.firtName)
+  if (req.query.id != undefined) {
+    Client.findById(req.query.id)
+      .then(client => {
+        client.update({
+          firstName: req.query.firstName,
+          phone: req.query.phone,
+          address: req.query.address,
+          limit_drink: req.query.limit_drink,
+          limit_food: req.query.limit_food,
+          client_vip: req.query.client_vip,
+        })
+          .then(() => {
+            res.send(client);
+          });
+      });
+  } else {
+    const client = Client.build({
+      firstName: req.query.firstName,
+      phone: req.query.phone,
+      address: req.query.address,
+      limit_drink: req.query.limit_drink,
+      limit_food: req.query.limit_food,
+      client_vip: req.query.client_vip,
+    })
+    client.save()
+      .then(() => {
+        res.send(client);
+      });
+  }
+
 });
 
 module.exports = router;
