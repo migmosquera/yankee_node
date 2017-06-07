@@ -5,7 +5,7 @@
       <title>Sistema de cEi</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
+        <link href="/stylesheets/materialize.min.css" rel="stylesheet">
         <link href="/stylesheets/home.css" rel="stylesheet">
   </head>
 
@@ -58,7 +58,7 @@
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons small">menu</i></a>
     </div>
     <!--Registrar Usuario-->
-    <ul id="slide-add" class="side-nav">
+    <ul id="slide-add" class="side-nav" ng-controller="Register">
       <li>
         <div class="userView">
           <span class="white-text name">Cliente</span>
@@ -66,7 +66,7 @@
         </div>
         <div class="container">
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" ng-init="searchTypeClient()">
               <div class="row">
                 <div class="input-field col s12">
                   <input id="search" type="search">
@@ -74,29 +74,29 @@
                 </div>
                 <div class="input-field col s12">
                   <i class="material-icons prefix">account_circle</i>
-                  <input placeholder="Ingrese su nombre porfavor" id="first_name" type="text">
+                  <input placeholder="Ingrese su nombre porfavor" id="first_name" type="text" ng-model="client.name">
                   <label for="first_name">Nombre</label>
                 </div>
                 <div class="input-field col s12">
                   <i class="material-icons prefix">phone</i>
-                  <input placeholder="Ingrese su nombre porfavor" id="icon_telephone" type="tel">
+                  <input placeholder="Ingrese su nombre porfavor" id="icon_telephone" type="tel" ng-model="client.phone">
                   <label for="icon_telephone">Telefono</label>
                 </div>
                 <div class="input-field col s12">
                   <i class="material-icons prefix">room</i>
-                  <input placeholder="Ingrese su nombre porfavor" id="icon_telephone" type="tel">
+                  <input placeholder="Ingrese su nombre porfavor" id="icon_telephone" type="tel" ng-model="client.address">
                   <label for="icon_telephone">Dirección</label>
                 </div>
                 <div class="input-field col s12">
-                  <select>
-                    <option value="" disabled selected>Elija una optción</option>
-                    <option value="1">Cliente Normal</option>
-                    <option value="2">Cliente Vip</option>
-                  </select>
-                  <label>Tipo de Cliente</label>
+                  <span>Tipo de cliente</span>
+                  <p>
+                    <input type="checkbox" id="test5" />
+                    <label for="test5">Vip</label>
+                  </p>
+                  
                 </div>
                 <div class="input-field col s12">
-                  <input id="limit" type="text">
+                  <input id="limit" type="text" ng-model="client.limit" value="0">
                   <label for="limit">Limite</label>
                 </div>
                 <div class="input-field col s12" style="text-align: center;">
@@ -112,8 +112,10 @@
       <a href="#" data-activates="slide-add" class="button-add"><i class="material-icons small">add_circle</i></a>
     </div>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-    <script src="/javascripts/home.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="/javascripts/materialize.min.js"></script>
+    <script type="text/javascript"  src="/javascripts/style.js"></script>
+    <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+    <script type="text/javascript"  src="/javascripts/home.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes){
   date_in: {
     type: DataTypes.DATE
   },
-  date_out: {
+  cant_product: {
     type: DataTypes.DATE
   },
 })

@@ -17,6 +17,7 @@ router.get('/', function (req, res, next) {
 
 });
 router.get('/listar', function (req, res) {
+  console.log("llego aqui");
   TypeClient.findAll({})
     .then(typeClient => {
       res.send(typeClient);

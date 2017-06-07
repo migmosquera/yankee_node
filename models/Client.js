@@ -9,7 +9,10 @@ module.exports = function(sequelize, DataTypes){
   address: {
     type: DataTypes.TEXT
   },
-  limit: {
+  limit_drink: {
+    type: DataTypes.INTEGER
+  },
+  limit_food: {
     type: DataTypes.INTEGER
   },
   cant_drink: {
@@ -17,6 +20,9 @@ module.exports = function(sequelize, DataTypes){
   },
   cant_Food: {
     type: DataTypes.INTEGER
+  },
+  client_vip: {
+    type: DataTypes.BOOLEAN
   },
 })
 } 
