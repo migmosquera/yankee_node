@@ -71,3 +71,7 @@ nav {
 .select-wrapper span.caret {
 	color: #fff
 }
+.message_text{
+    text-align: center;
+    color: #2EA554;
+}

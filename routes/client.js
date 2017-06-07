@@ -28,8 +28,9 @@ router.post('/saveClient', function (req, res) {
     firstName: req.query.firstName,
     phone: req.query.phone,
     address: req.query.address,
-    limit: req.query.limit,
-    typeClientId: req.query.typeClient,
+    limit_drink: req.query.limit_drink,
+    limit_food: req.query.limit_food,
+    client_vip: req.query.client_vip,
   })
   client.save()
     .then(() => {

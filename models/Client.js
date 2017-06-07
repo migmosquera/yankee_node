@@ -15,12 +15,6 @@ module.exports = function(sequelize, DataTypes){
   limit_food: {
     type: DataTypes.INTEGER
   },
-  cant_drink: {
-    type: DataTypes.INTEGER
-  },
-  cant_Food: {
-    type: DataTypes.INTEGER
-  },
   client_vip: {
     type: DataTypes.BOOLEAN
   },

@@ -66,7 +66,7 @@
         </div>
         <div class="container">
           <div class="row">
-            <form class="col s12" ng-init="searchTypeClient()">
+            <form class="col s12">
               <div class="row">
                 <div class="input-field col s12">
                   <input id="search" type="search">
@@ -90,17 +90,23 @@
                 <div class="input-field col s12">
                   <span>Tipo de cliente</span>
                   <p>
-                    <input type="checkbox" id="test5" />
+                    <input type="checkbox" id="test5"  ng-model="client.vip" ng-change="change()"/>
                     <label for="test5">Vip</label>
                   </p>
-                  
                 </div>
-                <div class="input-field col s12">
-                  <input id="limit" type="text" ng-model="client.limit" value="0">
-                  <label for="limit">Limite</label>
+                <div class="input-field col s12" ng-show="client.vip">
+                  <input id="limit" type="text" ng-model="client.limit_drink">
+                  <label for="limit">Limite de Bebidas</label>
                 </div>
+                <div class="input-field col s12" ng-show="client.vip">
+                  <input id="limit" type="text" ng-model="client.limit_food">
+                  <label for="limit">Limite de Productos</label>
+                </div>
+                <div class="input-field col s12" ng-show="showSuccess">
+                  <p class="message_text">El Cliente {{nameClient}} se ha Registrado</p>
+                </div>  
                 <div class="input-field col s12" style="text-align: center;">
-                  <button type="button" name="button_login" class="waves-effect waves-light btn">GUARDAR</button>
+                  <button type="button" name="button_login" class="waves-effect waves-light btn" ng-click="registerClient()">GUARDAR</button>
                 </div>
               </div>
             </form>
