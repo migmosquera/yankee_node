@@ -11,7 +11,7 @@
     <link href="/stylesheets/global.css" rel="stylesheet">
 </head>
 
-<body class="cyan lighten-5">
+<body class="cyan lighten-5" ng->
     <!--Menu Horizontal-->
     <nav id="menu-horizontal">
         <div class="nav-wrapper">
@@ -61,17 +61,53 @@
     <div id="home-page" class="menuVertical valign-wrapper">
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons small">menu</i></a>
     </div>
-    <div class="container_form">
-        <form class="col s12">
+    <div class="container_form" ng-controller="Client">
+        <form class="col s12" ng-init="seachClient()">
             <div class="row">
-                <div class="input-field col s6">
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
+                 <input ng-show="idSuccess" id="client_id" type="text" ng-model="client.id">
+                <div class="input-field col s12">
+                  <select id="search" class="searchSelect" ng-model="searchClient.searchClient"  ng-options="item.firstName for item in searchClient" ng-change="recoveryClient()">
+                  </select>
                 </div>
                 <div class="input-field col s6">
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">First Name</label>
+                    <input placeholder="Ingrese el Nombre del Cliente" id="first_name" type="text" ng-model="client.name">
+                    <label for="first_name">Nombre del Cliente</label>
                 </div>
+                <div class="input-field col s6">
+                    <input placeholder="Ingrese el Teléfono del Cliente" id="icon_telephone" type="tel" ng-model="client.phone">
+                  <label for="icon_telephone">Teléfono del Cliente</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Ingrese la dirección del Cliente" id="icon_telephone" type="tel" ng-model="client.address">
+                    <label for="icon_telephone">Dirección del Cliente</label>
+                </div>
+                <div class="input-field col s6">
+                    <span>Tipo de cliente</span>
+                  <p>
+                    <input type="checkbox" id="test5"  ng-model="client.vip" ng-change="change()"/>
+                    <label for="test5">Vip</label>
+                  </p>
+                </div>
+                 <div class="input-field col s6" ng-show="client.vip">
+                  <input id="limit" type="text" ng-model="client.limit_drink" placeholder="Ingrese el limite de Bebida">
+                  <label for="limit">Limite de Bebidas</label>
+                </div>
+                <div class="input-field col s6" ng-show="client.vip">
+                  <input id="limit" type="text" ng-model="client.limit_food" placeholder="Ingrese el limite de Comida">
+                  <label for="limit">Limite de Productos</label>
+                </div>
+                <div class="input-field col s6" ng-show="showSuccess">
+                  <p class="message_text">El Cliente {{nameClient}} se ha Registrado</p>
+                </div>
+                <div class="input-field col s12" style="text-align: center;">
+                  <button type="button" name="button_login" class="waves-effect waves-light btn" ng-click="registerClient()">GUARDAR</button>
+                </div>
+                <div class="input-field col s12" style="text-align: center;">
+                  <button type="button" name="button_login" class="waves-effect waves-light btn" ng-click="clearClient()">LIMPIAR</button>
+                </div>
+                <div class="input-field col s12" style="text-align: center;" ng-show="containerDelete">
+                  <button type="button" name="button_login" class="waves-effect waves-light btn" ng-click="deleteClient()">ELIMINAR</button>
+                </div>   
             </div>
         </form>
     </div>
@@ -80,7 +116,16 @@
     <script type="text/javascript" src="/javascripts/style.js"></script>
     <script type="text/javascript" src="/javascripts/angular.min.js"></script>
     <script type="text/javascript" src="/javascripts/client.js"></script>
-
+    <script type="text/javascript" src="/javascripts/select2.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".caret").hide();
+        $(".select-dropdown").hide();
+        $("select").select2({
+          placeholder: "Buscar un Cliente",
+        });
+      });
+    </script>
 </body>
 
 </html>

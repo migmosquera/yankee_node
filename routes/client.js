@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
   if (req.session && req.session.user) {
     var data = req.session.user
     JSON.stringify(data)
-    res.render('client', { 
+    res.render('client', {
       firstName: data[0].firstName,
       lastName: data[0].lastName,
       typeUser: data[0].type_user.name
@@ -56,7 +56,12 @@ router.post('/saveClient', function (req, res) {
         res.send(client);
       });
   }
-
 });
-
+router.post('/deleteClient', function (req, res) {
+  Client.findById(req.query.id)
+    .then(client => {
+      client.destroy({})
+      res.send("ok");
+    });
+});
 module.exports = router;
