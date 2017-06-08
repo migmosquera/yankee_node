@@ -9,7 +9,11 @@ router.get('/', function (req, res, next) {
   if (req.session && req.session.user) {
     var data = req.session.user
     JSON.stringify(data)
-    res.render('client', { username: data[0].username });
+    console.log(data[0].firstName)
+    res.render('client', { 
+      firstName: data[0].firstName,
+      lastName: data[0].lastName
+    });
 
   } else {
     res.render('index', { title: 'Yankee' });

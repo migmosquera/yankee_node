@@ -89,3 +89,10 @@ nav {
 .select2-arrow{
     display: none !important;
 }
+.container_form{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    margin: 0 auto;
+
+}
