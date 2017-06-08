@@ -6,7 +6,7 @@ var md5 = require('md5');
 
 function authenticate(name, pass, fn) {
     if (!module.parent) console.log('authenticating %s:%s', name, pass);
-    User.findAll({ where: { username: name, password: pass } })
+    User.findAll({ where: { username: name, password: pass } , include: [ { all: true } ] })
         .then(user => {
             if (user.length != 0) {
                 return fn(null, user)

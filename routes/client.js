@@ -9,10 +9,10 @@ router.get('/', function (req, res, next) {
   if (req.session && req.session.user) {
     var data = req.session.user
     JSON.stringify(data)
-    console.log(data[0].firstName)
     res.render('client', { 
       firstName: data[0].firstName,
-      lastName: data[0].lastName
+      lastName: data[0].lastName,
+      typeUser: data[0].type_user.name
     });
 
   } else {
