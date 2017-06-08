@@ -20,18 +20,25 @@
                   <img class="responsive-img" style="width: 230px" src="/images/centroHipicoYankee.jpeg" />
                   <div class="left-aling">
                     <div ng-controller="Login">
-                      <form id="login-form" name="add-estimation", method="post">
+                      <form id="form" name="form", method="post">
                         <div class="row">
                           <div class="col s12 input-field">
                             <i class="large material-icons prefix">account_circle</i>
-                              <input type="text" name="txtUser" id="txtUser" ng-model="user.username" class="validate" />
+                              <input type="text" name="txtUser" id="txtUser" ng-model="user.username" class="validate" required />
                               <label for="txtUser" data-error="Campo Requerido">Ingrese Usuario</label>
+                              <div ng-show="erroUser">
+                                   <p class="errorLogin" ng-show="form.txtUser.$error.required">Ingrese el Usuario</p>
+                              </div>
                           </div>
                           <div class="col s12 input-field">
                             <i class="large material-icons prefix">lock</i>
-                              <input type="password" id="txtPassword" name="txtPassword" ng-model="user.password" class="validate" />
+                              <input type="password" id="txtPassword" name="txtPassword" ng-model="user.password" class="validate" required />
                               <label for="txtPassword">Ingrese Contraseña</label>
+                              <div ng-show="erroPass">
+                                   <p class="errorLogin"  ng-show="form.txtPassword.$error.required">Ingrese la Contraseña</p>
+                              </div>
                           </div>
+                          <p class="errorLogin"  >{{errorLogin}}</p>
                           <div class="col s12 input-field">
                             <button type="button" name="button_login" class="waves-effect waves-light btn-large" ng-click="login()">Entrar</button>
                           </div>

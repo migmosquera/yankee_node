@@ -41,7 +41,9 @@ aplicacion.controller('Register', function ($scope, $http, $location, $window) {
         }).success(function (data) {
             $scope.nameClient = data.firstName;
             $scope.client = new Object();
+            $scope.searchClient =  new Object();
             $scope.showSuccess = true;
+            $scope.seachClient();
         }).error(function () {
             console.log('Error al intentar guardar el cliente.');
         });

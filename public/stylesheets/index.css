@@ -2,3 +2,7 @@ body {
   padding: 0;
   margin: 0;
 }
+.errorLogin{
+    text-align: center;
+    color: #BC0004 !important;
+}
