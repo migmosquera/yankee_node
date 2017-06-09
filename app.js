@@ -29,6 +29,8 @@ app.use(cookieSession({
 }))
 app.use('/', require('./routes/index'));
 app.use('/home', require('./routes/home'));
+app.use('/user', require('./routes/user'));
+app.use('/products', require('./routes/products'));
 app.use('/client', require('./routes/client'));
 
 // catch 404 and forward to error handler
