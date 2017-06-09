@@ -1,0 +1,34 @@
+/*style add cliente*/
+.input-field .prefix {
+	color: #fff;
+}
+.input-field {
+     color: #fff;
+}
+.select-wrapper span.caret {
+	color: #fff
+}
+.message_text{
+    text-align: center;
+    color: #2EA554;
+}
+.select2-container{
+    width: 100% !important;
+}
+.select2-container .select2-choice{
+    background: none !important;
+    color: #ffffff !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0px !important;
+}
+.select2-arrow{
+    display: none !important;
+}
+.container_form{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    margin: 0 auto;
+}
