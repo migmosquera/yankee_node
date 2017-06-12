@@ -1,19 +1,45 @@
 /*style add cliente*/
 .input-field .prefix {
 	color: #fff;
+    font-size: 40px;
+}
+.input-field .prefix.active {
+	color: #333;
 }
 .input-field {
-     color: #fff;
+    color: #fff;
+    font-size: 24px;
 }
-.select-wrapper span.caret {
-	color: #fff
+.input-field label {
+    color: #fff;
+}
+.input-field label:not(.label-icon).active {
+    font-size: 24px;
+}
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    border-bottom: 1px solid #fff;
+    font-size: 20px;
+}
+[type="checkbox"]+label {
+    font-size: 24px;
 }
 .message_text{
     text-align: center;
     color: #2EA554;
 }
+.container_form{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    margin: 0 auto;
+}
+.errorLogin{
+    text-align: center;
+    color: #BC0004 !important;
+}
 .select2-container{
     width: 100% !important;
+    margin-left: 3rem !important;
 }
 .select2-container .select2-choice{
     background: none !important;
@@ -22,13 +48,13 @@
     border-left: none !important;
     border-right: none !important;
     border-radius: 0px !important;
+    border-bottom: 1px solid #ffffff !important;
+    height: 35px !important;
 }
 .select2-arrow{
     display: none !important;
 }
-.container_form{
-    display: inline-block;
-    vertical-align: middle;
-    width: 70%;
-    margin: 0 auto;
+.select2-container-active .select2-choice .select2-container-focus{
+    box-shadow: 0 0 0;
+    border: 0;
 }

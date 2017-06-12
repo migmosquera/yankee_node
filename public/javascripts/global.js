@@ -23,10 +23,10 @@ $('.button-add').sideNav({
 //tamaño de la pantalla
 $("#home-page").css("height", $(window).height() - parseInt($("#menu-horizontal").css("height").replace("px", '')));
 $("#add-cliente").css("height", $(window).height() - parseInt($("#menu-horizontal").css("height").replace("px", '')));
-//inicializando boton derecho del menu horizontal
-$(".dropdown-button").dropdown();
+// inicializando modal
+$('.modal').modal();
 //inicializando selects
-$('select').material_select();
+//$('select').material_select();
 
 function init() {
 

@@ -16,50 +16,84 @@
     <ul id="slide-add" class="side-nav" ng-controller="Register">
       <li>
         <div class="userView">
-          <span class="white-text name">Cliente</span>
+          <div style="display: inline-flex">
+            <h4 style="padding: 0 10px;">Registrar Clientes</h4>
+            
+            <button class="btn btn-floating btn-large blue pulse" ng-click="clearClient()"><i class="material-icons">add</i></button>
+          </div>
           <li>
             <div class="divider"></div>
           </li>
         </div>
         <div class="container">
           <div class="row">
-            <form class="col s12" ng-init="seachClient()">
+            <form id="formRegister" name="formRegister" class="col s12" ng-init="seachClient()">
               <div class="row">
-                <div class="input-field col s12">
-                  <select id="search" class="searchSelect" ng-model="searchClient.searchClient" ng-options="item.firstName for item in searchClient"
-                    ng-change="recoveryClient()">
-                  </select>
+                <div class="row">
+                  <div class="input-field col s8">
+                    <i class="material-icons prefix">search</i>
+                    <select id="search" ng-model="searchClient.searchClient" ng-options="item.firstName for item in searchClient"
+                      ng-change="recoveryClient()">
+                    </select>
+                  </div>
                 </div>
+                <div class="input-field col s12"></div>
+                <div class="input-field col s12"></div>
+                <div class="input-field col s12"></div>
+                <div class="input-field col s12"></div>
                 <input ng-show="idSuccess" id="client_id" type="text" ng-model="client.id">
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input placeholder="Ingrese su nombre porfavor" id="first_name" type="text" ng-model="client.name">
-                  <label for="first_name">Nombre</label>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input placeholder="Ej. Pablo" id="first_name" type="text" ng-model="client.name" required />
+                    <label for="first_name">Nombre</label>
+                    <div ng-show="errorUserSave">
+                      <p class="errorLogin" ng-show="formRegister.first_name.$error.required">Ingrese un nombre</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">phone</i>
-                  <input placeholder="Ingrese su teléfono porfavor" id="icon_telephone" type="tel" ng-model="client.phone">
-                  <label for="icon_telephone">Teléfono</label>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">phone</i>
+                    <input placeholder="Ej. 04165555555" id="phone" type="tel" ng-model="client.phone" required />
+                    <label for="phone">Teléfono</label>
+                    <div ng-show="errorPhoneSave">
+                      <p class="errorLogin" ng-show="formRegister.phone.$error.required">Carácter inválido</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                  <i class="material-icons prefix">room</i>
-                  <input placeholder="Ingrese su dirección porfavor" id="icon_telephone" type="tel" ng-model="client.address">
-                  <label for="icon_telephone">Dirección</label>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <i class="material-icons prefix">room</i>
+                    <input placeholder="Ej. Cabudare Urb. La Estancia" id="address" type="tel" ng-model="client.address">
+                    <label for="address">Dirección</label>
+                  </div>
                 </div>
-                <div class="input-field col s12">
-                  <span>Tipo de cliente</span>
-                  <p>
-                    <input type="checkbox" id="test5" ng-model="client.vip" ng-change="change()" />
-                    <label for="test5">Vip</label>
-                  </p>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <span>Tipo de cliente</span>
+                    <h5 style="color: #d8d5d5">Los clientes vip no cancelaran bebidas o productos.</h5>
+                    <h5 style="color: #d8d5d5">Si marca la opcion, debera indicar un limite de consumo.</h5>
+                    <p>
+                      <input type="checkbox" id="test5" ng-model="client.vip" ng-change="change()" />
+                      <label for="test5">Vip</label>
+                    </p>
+                  </div>
                 </div>
-                <div class="input-field col s12" ng-show="client.vip">
-                  <input id="limit" type="text" ng-model="client.limit_drink" placeholder="Ingrese el limite de Bebida">
-                  <label for="limit">Limite de Bebidas</label>
+                <div class="input-field col s12"></div>
+                <div class="input-field col s6" ng-show="client.vip">
+                  <input id="limit_drink" type="text" ng-model="client.limit_drink" placeholder="0">
+                  <label for="limit_drink">Bebidas</label>
+                  <div ng-show="errorLimit_drink">
+                    <p class="errorLogin" ng-show="formRegister.limit_drink.$error.required">Carácter inválido</p>
+                  </div>
                 </div>
-                <div class="input-field col s12" ng-show="client.vip">
-                  <input id="limit" type="text" ng-model="client.limit_food" placeholder="Ingrese el limite de Comida">
-                  <label for="limit">Limite de Productos</label>
+                <div class="input-field col s6" ng-show="client.vip">
+                  <input id="limit_food" type="text" ng-model="client.limit_food" placeholder="0">
+                  <label for="limit_food">Productos</label>
+                  <div ng-show="errorLimit_food">
+                    <p class="errorLogin" ng-show="formRegister.limit_food.$error.required">Carácter inválido</p>
+                  </div>
                 </div>
                 <div class="input-field col s12" ng-show="showSuccess">
                   <p class="message_text">El Cliente {{nameClient}} se ha Registrado</p>
@@ -74,7 +108,7 @@
       </li>
     </ul>
     <div id="add-cliente" class="menuVertical valign-wrapper" style="float: right;">
-      <a href="#" data-activates="slide-add" class="button-add"><i class="material-icons small">add_circle</i></a>
+      <a href="#" data-activates="slide-add" class="button-add"><i class="material-icons medium">add_circle</i></a>
     </div>
 
     <% include javascriptGoblal.html %>
