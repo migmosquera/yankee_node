@@ -16,7 +16,7 @@
       <form class="col s12">
         <div class="row">
           <input ng-show="idSuccess" id="user_id" type="text" ng-model="user.id">
-          <div class="input-field col s12" ng-init="searchUser()">
+          <div class="input-field col s12" ng-init="searchUsers()">
             <select id="search" class="searchSelect" ng-model="searchUser.searchUser" ng-options="item.firstName for item in searchUser"
               ng-change="recoveryUser()">
                   </select>
@@ -49,7 +49,7 @@
           </div>
          
           <div class="input-field col s6" ng-show="showSuccess">
-            <p class="message_text">El Usuario {{nameUser} se ha Registrado</p>
+            <p class="message_text">El Usuario {{nameUser}} se ha Registrado</p>
           </div>
           <div class="input-field col s12" style="text-align: center;">
             <button type="button" name="button_login" class="waves-effect waves-light btn" ng-click="registerUser()">GUARDAR</button>

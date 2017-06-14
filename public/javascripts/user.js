@@ -5,7 +5,7 @@ aplicacion.controller('User', function ($scope, $http, $location, $window) {
     $scope.searchUser =  new Object();
     $scope.showSuccess = false;
     $scope.containerDelete = false;
-    $scope.searchUser = function (){
+    $scope.searchUsers = function (){
         $http({
             method: 'get',
             url: '/user/searchUser',
@@ -28,7 +28,7 @@ aplicacion.controller('User', function ($scope, $http, $location, $window) {
         });
     }
     $scope.registerUser = function () {
-        console.log($scope.searchUser[0].id)
+        console.log($scope.typeUser.typeUser.id)
         $http({
             method: 'POST',
             url: '/user/saveUser',
@@ -38,14 +38,14 @@ aplicacion.controller('User', function ($scope, $http, $location, $window) {
                 username: $scope.user.username,
                 password: $scope.user.password,
                 phone: $scope.user.phone,
-                typeUserId: $scope.searchUser[0].id , 
+                typeUserId: $scope.typeUser.typeUser.id, 
             }
         }).success(function (data) {
             $scope.nameUser = data.firstName;
             $scope.user = new Object();
             $scope.searchUser =  new Object();
             $scope.showSuccess = true;
-            $scope.searchUser();
+            $scope.searchUsers();
             $scope.containerDelete = false;
         }).error(function () {
             console.log('Error al intentar guardar el cliente.');
@@ -54,6 +54,17 @@ aplicacion.controller('User', function ($scope, $http, $location, $window) {
     $scope.clearuser= function () {
         $scope.user = new Object();
         $scope.containerDelete = false;
+    }
+    $scope.recoveryUser = function (data) {
+        console.log($scope.typeUser)
+        $scope.user.id = $scope.searchUser.searchUser.id;
+        $scope.user.name = $scope.searchUser.searchUser.firstName;
+        $scope.user.last_name = $scope.searchUser.searchUser.lastName;
+        $scope.user.username = $scope.searchUser.searchUser.username;
+        $scope.user.password = $scope.searchUser.searchUser.password;
+        $scope.user.phone = $scope.searchUser.searchUser.phone;
+        $scope.typeUser = $scope.searchUser.searchUser.typeUserId;
+        $scope.containerDelete = true
     }
     /*$scope.deleteClient = function () {
 
