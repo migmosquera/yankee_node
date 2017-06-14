@@ -6,19 +6,19 @@
   <title>Sistema de cEi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <% include cssGlobal.html %>
-    <link href="/stylesheets/jquery2.css" rel="stylesheet">
     <link href="/stylesheets/home.css" rel="stylesheet">
 </head>
 
 <body class="cyan lighten-5">
   <% include navbar.html %>
+    <!--home-->
+
     <!--Registrar Usuario-->
     <ul id="slide-add" class="side-nav" ng-controller="Register">
       <li>
         <div class="userView">
           <div style="display: inline-flex">
             <h4 style="padding: 0 10px;">Registrar Clientes</h4>
-            
             <button class="btn btn-floating btn-large blue pulse" ng-click="clearClient()"><i class="material-icons">add</i></button>
           </div>
           <li>
@@ -32,8 +32,7 @@
                 <div class="row">
                   <div class="input-field col s8">
                     <i class="material-icons prefix">search</i>
-                    <select id="search" ng-model="searchClient.searchClient" ng-options="item.firstName for item in searchClient"
-                      ng-change="recoveryClient()">
+                    <select id="search" ng-model="searchClient.searchClient" ng-options="item.firstName for item in searchClient" ng-change="recoveryClient()">
                     </select>
                   </div>
                 </div>
@@ -110,9 +109,16 @@
     <div id="add-cliente" class="menuVertical valign-wrapper" style="float: right;">
       <a href="#" data-activates="slide-add" class="button-add"><i class="material-icons medium">add_circle</i></a>
     </div>
+    <div style="background-color: #fff; width: 90%; height: 700px; display: inline-flex; position: absolute">
+      <div class="container">
+        <div style="width: 100%; height: 500px; background-color: red">
+
+        </div>
+      </div>
+
+    </div>
 
     <% include javascriptGoblal.html %>
-      <script type="text/javascript" src="/javascripts/select2.js"></script>
       <script type="text/javascript" src="/javascripts/home.js"></script>
       <script type="text/javascript">
         $(document).ready(function () {

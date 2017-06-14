@@ -31,7 +31,7 @@ h5 {
 .menuVertical {
 	display: inline-flex;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 64px;
+    width: 5%;
 }
 .menuVertical a {
 	color: #fff;
