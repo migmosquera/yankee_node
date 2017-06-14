@@ -110,7 +110,7 @@
       <a href="#" data-activates="slide-add" class="button-add"><i class="material-icons medium">add_circle</i></a>
     </div>
     <div class="contHome">
-      <div class="contPanel">
+      <div class="contPanel" style="background-color: #333">
         <div class="valign-wrapper" style="width: 100%">
           <div class="container">
             <div class="row">
@@ -119,10 +119,51 @@
                 <button class="btn btn-floating btn-large blue pulse" ng-click="clearClient()"><i class="material-icons">add</i></button>
               </div>
               <div class="divider"></div>
-              <div class="input-field col s8">
+            </div>
+            <div class="row">
+              <div class="input-field col s8 m6">
                 <i class="material-icons prefix">search</i>
-                <select id="search" ng-model="searchClient.searchClient" ng-options="item.firstName for item in searchClient" ng-change="recoveryClient()">
-                    </select>
+                <select class="icons">
+                    <option value="" disabled selected>Clientes</option>
+                    <option value="" data-icon="/images/user.png" class="circle">example 1</option>
+                    <option value="" data-icon="images/user.png" class="circle">example 2</option>
+                    <option value="" data-icon="images/user.png" class="circle">example 3</option>
+                  </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s8 m6">
+                <i class="material-icons prefix">search</i>
+                <select>
+                    <option value="" disabled selected>Bebidas</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s8 m6">
+                <i class="material-icons prefix">search</i>
+                <select>
+                    <option value="" disabled selected>Productos</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="col s6">
+                <a class="waves-effect waves-light btn-large blue">Guardar Pedido</a>
+              </div>
+              <div class="col s6">
+                <a class="waves-effect waves-light btn-large red">Cerrar Cuenta</a>
+              </div>
+            </div>
+            <div class="row center">
+              <div class="col s12">
+                <a class="waves-effect waves-light btn-large blue">Cuentas Abiertas</a>
               </div>
             </div>
           </div>
@@ -169,7 +210,7 @@
 
     <% include javascriptGoblal.html %>
       <script type="text/javascript" src="/javascripts/home.js"></script>
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
         $(document).ready(function () {
           $(".caret").hide();
           $(".select-dropdown").hide();
@@ -177,7 +218,7 @@
             placeholder: "Buscar un Cliente",
           });
         });
-      </script>
+      </script>-->
 
 </body>
 

@@ -26,7 +26,7 @@ $("#add-cliente").css("height", $(window).height() - parseInt($("#menu-horizonta
 // inicializando modal
 $('.modal').modal();
 //inicializando selects
-//$('select').material_select();
+$('select').material_select();
 
 function init() {
 

@@ -68,3 +68,6 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
     height: 700px;
     display: inline-flex
 }
+.center {
+    text-align: center;
+}
