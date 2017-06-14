@@ -109,13 +109,62 @@
     <div id="add-cliente" class="menuVertical valign-wrapper" style="float: right;">
       <a href="#" data-activates="slide-add" class="button-add"><i class="material-icons medium">add_circle</i></a>
     </div>
-    <div style="background-color: #fff; width: 90%; height: 700px; display: inline-flex; position: absolute">
-      <div class="container">
-        <div style="width: 100%; height: 500px; background-color: red">
-
+    <div class="contHome">
+      <div class="contPanel">
+        <div class="valign-wrapper" style="width: 100%">
+          <div class="container">
+            <div class="row">
+              <div style="display: inline-flex">
+                <h4 style="padding: 0 10px;">Registrar Clientes</h4>
+                <button class="btn btn-floating btn-large blue pulse" ng-click="clearClient()"><i class="material-icons">add</i></button>
+              </div>
+              <div class="divider"></div>
+              <div class="input-field col s8">
+                <i class="material-icons prefix">search</i>
+                <select id="search" ng-model="searchClient.searchClient" ng-options="item.firstName for item in searchClient" ng-change="recoveryClient()">
+                    </select>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="contPanel" style="background-color: #fff">
+        <div class="valign-wrapper" style="width: 100%">
+          <div class="container">
+            <table class="striped centered responsive-table">
+              <thead>
+                <tr>
+                  <th>Cant.</th>
+                  <th></th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
 
+              <tbody>
+                <tr>
+                  <td>Alvin</td>
+                  <td>Eclair</td>
+                  <td>$0.87</td>
+                  <td>iconos</td>
+                </tr>
+                <tr>
+                  <td>Alan</td>
+                  <td>Jellybean</td>
+                  <td>$3.76</td>
+                  <td>iconos</td>
+                </tr>
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td>$7.00</td>
+                  <td>iconos</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 
     <% include javascriptGoblal.html %>

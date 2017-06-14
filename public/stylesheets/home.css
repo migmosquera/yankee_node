@@ -58,11 +58,13 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
     box-shadow: 0 0 0;
     border: 0;
 }
-
-
-.styleDiv {
+.contHome {
+    width: 90%;
     display: inline-flex;
-    width: 49%;
-    height: 400px;
-    background-color: #fff; 
+    position: absolute
+}
+.contPanel {
+    width: 50%;
+    height: 700px;
+    display: inline-flex
 }
